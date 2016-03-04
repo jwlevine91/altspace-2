@@ -1,0 +1,11 @@
+<div class="col-md-3">
+	<div class="thumbnail">
+		<%= link_to user_path(user.username) do%>
+		<%= gravatar_tag user.email, size:200 %>
+		<div class="caption">
+			<h4><%= user.username %></h4>
+			<p> on spaces this will be reservations thing </p>
+		</div>
+		<% end %>
+	</div>
+</div>
