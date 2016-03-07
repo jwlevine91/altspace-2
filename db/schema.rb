@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304152428) do
+ActiveRecord::Schema.define(version: 20160306190259) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "requestee_id"
     t.integer  "space_id"
-    t.string   "state"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "state",        default: "pending"
   end
 
   create_table "spaces", force: :cascade do |t|

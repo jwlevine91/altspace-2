@@ -2,7 +2,16 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-  	@users = User.all
+  	case params[:people]
+  	when "reserved"
+  		@users = current_user.active_reservations
+  	when "requests"
+  		@users = current_user.pending_reservation_requests_from
+  	when "pending"
+  		@users = current_user.pending_reservation_requests_to
+  	else
+  		@users = User.where.not(id: current_user.id)
+  	end
   end
 
   def show
