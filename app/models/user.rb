@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true
   validates :username, uniqueness: {case_sensitive: false}
-
+  has_many :comments
   has_many :spaces
   has_many :reservations, dependent: :destroy
   has_many :inverse_reservations, class_name: "Reservation", foreign_key: "requestee_id", dependent: :destroy

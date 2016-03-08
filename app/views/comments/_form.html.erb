@@ -1,0 +1,14 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :author %>
+    <%= f.input :comment_entry %>
+  </div>
+
+  <%= f.select :rating, ["1", "2", "3", "4", "5"], {:include_blank => 'Rating'} %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

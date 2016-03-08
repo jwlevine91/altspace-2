@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'tzinfo-data'
 gem 'devise', '~> 4.0.0.rc1'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
